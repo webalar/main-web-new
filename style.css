@@ -1,0 +1,136 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* {
+  cursor: none;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-image: url(https://i.pinimg.com/originals/fc/12/af/fc12af4fdda0c0ec5cf23ae293d11a7d.png);
+  color: #fff;
+  font-family: 'lato';
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  z-index: 999;
+  top: var(--y);
+  left: var(--x);
+  right: 0;
+  bottom: 0;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  -webkit-transition: height 0.4s ease-in-out;
+  transition: height 0.4s ease-in-out;
+  font-size: 2rem;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+body.img-hovered::after {
+  width: 7em;
+  height: 7em;
+  content: "CLICK";
+  text-align: center;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Playfair Display';
+  font-weight: 700;
+  -webkit-animation: spin 4s infinite forwards cubic-bezier(1, 1, 1, 1);
+          animation: spin 4s infinite forwards cubic-bezier(1, 1, 1, 1);
+}
+
+.title {
+  text-align: center;
+  font-family: 'Playfair Display';
+  font-weight: 700;
+  font-size: 5rem;
+}
+
+.hero {
+  position: relative;
+  padding: 0 10%;
+  margin-top: 10em;
+}
+
+.hero__text {
+  font-size: 5rem;
+  padding: 2rem;
+  color: #fff;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+
+.hero__imgContainer {
+  width: 700px;
+  height: 600px;
+  position: absolute;
+  left: 45%;
+  top: 0;
+  z-index: 0;
+}
+
+.hero__imgContainer img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.hero__imgContainer img:hover {
+  -webkit-filter: brightness(150%);
+          filter: brightness(150%);
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=style.css.map */
